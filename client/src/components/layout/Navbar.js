@@ -6,6 +6,10 @@ import {connect} from 'react-redux';
 
 
 
+import './i.css'; 
+// import megamenu
+import megamenu from '../commonFeilds/megamenu/megamenu'; 
+
 
 // ACTIONS 
 import {logoutUser} from '../../actions/authAction' ; 
@@ -26,15 +30,15 @@ class Navbar extends Component {
     const {isAuthenticate, user} = this.props.auth;
 
     const logedInUserLinks = (
-      <ul className="navbar-nav ml-auto">
-      <li className="nav-item">
-      <Link className="nav-link"  to="/feed"> PostsFeed </Link>
+      <React.Fragment>
+         <li>
+      <Link to="/feed"> PostsFeed </Link>
     </li>
-      <li className="nav-item">
-        <Link className="nav-link"  to="/dashboard"> Dashboard </Link>
+      <li>
+        <Link to="/dashboard"> Dashboard </Link>
       </li>
-      <li className="nav-item">
-          <a href="#" onClick={this.onLogoutClick} className="nav-link"> 
+      <li>
+          <a href="#" onClick={this.onLogoutClick}> 
             <img src={user.avatar}  
             alt={user.name} 
             className="rounded-circle"
@@ -46,41 +50,40 @@ class Navbar extends Component {
             Logout
           </a>
       </li>
-    </ul>
+      </React.Fragment>
     ); 
     const newUserLinks = (
-      <ul className="navbar-nav ml-auto">
-      <li className="nav-item">
-        <Link className="nav-link" to="/register">Sign Up</Link>
+     <React.Fragment>
+        <li>
+        <Link to="/register">Sign Up</Link>
       </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/login">Login</Link>
-        <Link className='nav-link'  to=''/>
+      <li>
+        <Link to="/login">Login</Link>
       </li>
-    </ul>
+     </React.Fragment>
     ); 
 
+
+    
+
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
-    <div className="container">
-      <Link className="navbar-brand" to="/">DevConnector</Link>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-
-      <div className="collapse navbar-collapse" id="mobile-nav">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/profiles"> Students
-            </Link>
-          </li>
-        </ul>
-
-          {isAuthenticate ? logedInUserLinks : newUserLinks} {/* Conditional rendering */}
-
-      </div>
-    </div>
-  </nav>
+      
+  <header>
+  <Link className="logo" to="/">ToPerfect</Link>
+    <div class="menu-toggle"></div>
+ <nav>
+   <ul>
+     <li>
+        <Link className="active" to="/profiles"> Students</Link>
+     </li>
+     <li>
+       <a href="#">Sports</a>
+     </li>
+      {isAuthenticate ? logedInUserLinks : newUserLinks} {/* Conditional rendering */}
+   </ul>
+ </nav>
+ <div class="clearfix"></div>
+</header>
     )
   }
 }; 

@@ -1,0 +1,161 @@
+/* 
+#i :hover{
+	background: #2c2c2c;
+}
+
+#i :hover a{
+	color: #ca914e;
+}
+
+
+
+#i #ia sub_menu{
+	position: absolute;
+	background: #2c2c2c;
+	width: 100%;
+	left: 0;
+	top: 60px;
+	padding: 25px 15px;
+	display: flex;
+	justify-content: space-around;
+	visibility: hidden;
+	line-height: 24px;
+}
+
+
+
+#i:hover #ia .sub_menu{
+	visibility: visible;
+}
+
+
+#i:hover #ia.sub_menu p{
+	color: #fff;
+	margin-top: 15px;
+	font-size: 14px;
+}
+
+#i:hover #ia .sub_menu h4{
+	color: #ca914e;
+}
+ */
+
+
+
+ header {
+	position: relative;
+	max-width: 1200px;
+	margin: 20px auto;
+	padding: 10px;
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 4px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.2); 
+}
+
+
+.logo{
+	color: #333;
+	height: 50px;
+	font-size: 36px;
+	line-height: 60px;
+	padding: 0 20px;
+	text-align: center;
+	box-sizing: border-box;
+	float: left;
+	font-weight: 700px;
+	text-decoration: none;
+
+}
+
+
+.logo:hover{
+	text-decoration: none; 
+	color: #333;
+}
+
+
+nav{
+	float: right;
+}
+
+.clearfix{
+	clear: both; 
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li {
+	list-style: none;
+}
+
+nav ul li a  {
+	display: block;
+	text-decoration: none;
+	margin: 10px 20px;
+	padding: 10px 20px;
+	color: #262626; 
+}
+
+
+nav ul li a.active,
+nav ul li a:hover {
+	background: #069370; 
+	color: #fff;
+	transition: 0.5s; 
+	text-decoration: none;
+}
+
+
+@media (max-width: 1200px){
+	header{
+		margin: 20px;
+	}
+}
+
+
+@media (max-width: 768px){
+		
+		.menu-toggle {
+			display: block;
+			height: 40px;
+			width: 40px;
+			margin: 10px;
+			background: #ccc;
+			float: right;
+			cursor: pointer;
+			text-align: center;
+			color: #069370; 
+		}
+		.menu-toggle:before {
+			content: '\f0c9';
+			font-family: fontAwesome;  
+			line-height: 40px;
+
+
+		}
+		.menu-toggle.active:before {
+			content: '\f00d';	
+
+		}
+
+		nav{
+			display: none;
+		}
+
+		nav.active{
+			display: block;;
+			width: 100px; 
+		}
+
+		nav.active ul {
+			display: block; 
+		}
+		nav.active ul li {
+			margin: 0; 
+		}
+}
